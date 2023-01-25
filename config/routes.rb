@@ -49,10 +49,33 @@ Rails.application.routes.draw do
   counter = 0
   6.times do
   counter = counter + 1
-  get("/roll/"+counter+"6", { :controller => "dice", :action => "roll_1_6" })
-
+  get("/roll/"+counter.to_s+"/6", { :controller => "dice", :action => "roll_"+counter.to_s+"_6" })
   end
 
+  counter = 0
+  4.times do
+  counter = counter + 1
+  get("/roll/"+counter.to_s+"/4", { :controller => "dice", :action => "roll_"+counter.to_s+"_4" })
+  end
+
+  counter = 0
+  2.times do
+  counter = counter + 1
+  get("/roll/"+counter.to_s+"/8", { :controller => "dice", :action => "roll_"+counter.to_s+"_8" })
+  end
+
+  counter = 0
+  2.times do
+  counter = counter + 1
+  get("/roll/"+counter.to_s+"/10", { :controller => "dice", :action => "roll_"+counter.to_s+"_10" })
+  end
+
+  counter = 0
+  2.times do
+  counter = counter + 1
+  get("/roll/"+counter.to_s+"/20", { :controller => "dice", :action => "roll_"+counter.to_s+"_20" })
+  end
+  
   #get("/roll/1/6", { :controller => "dice", :action => "roll_1_6" })
   #get("/roll/2/6", { :controller => "dice", :action => "roll_2_6" })
   #get("/roll/3/6", { :controller => "dice", :action => "roll_3_6" })
@@ -65,6 +88,7 @@ Rails.application.routes.draw do
   #get("/roll/2/4", { :controller => "dice", :action => "roll_2_4" })
   #get("/roll/3/4", { :controller => "dice", :action => "roll_3_4" })
   #get("/roll/4/4", { :controller => "dice", :action => "roll_4_4" })
+
   #get("/roll/1/8", { :controller => "dice", :action => "roll_1_8" })
   #get("/roll/2/8", { :controller => "dice", :action => "roll_2_8" })
   #get("/roll/1/10", { :controller => "dice", :action => "roll_1_10" })
