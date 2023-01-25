@@ -1,11 +1,11 @@
 <h1>Lucky numbers</h1>
 
-<p>Your lucky numbers for today are:</p>
+<p>Your unlucky numbers for today are:</p>
 
 <ul>
   <% @zebra.each do |elephant| %> <!-- each takes every element from an arrray and then do |name| will name each element as "name" -->
     <li>
-      <%= elephant %> <!-- with = shows in the page, without it won't show up -->
+      <%= elephant %>
     </li>
   <% end %>
 </ul>
