@@ -18,19 +18,19 @@ Rails.application.routes.draw do
 
   get("/zodiacs/aries", { :controller =>  "fires", :action =>  "ram" })
   get("/zodiacs/leo", { :controller => "fires", :action => "lion" })
-  # get("/zodiacs/sagittarius" { :controller => "fire", :action => "archer" })
+  get("/zodiacs/sagittarius" , { :controller => "fires", :action => "archer" })
   
-  # get("/zodiacs/taurus", { :controller, "earth", :action, "bull" })
-  # get("/zodiacs/virgo", { :controller => "earth", :action => "maiden" })
-  # get("/zodiacs/capricorn", { :controller => "earth", :action => "goat" })
+  get("/zodiacs/taurus", { :controller => "earth", :action => "bull" })
+  get("/zodiacs/virgo", { :controller => "earth", :action => "maiden" })
+  get("/zodiacs/capricorn", { :controller => "earth", :action => "goat" })
   
-  # get("/zodiacs/gemini", { :controller => "air", :action => "twins" })
-  # get(" /zodiacs/libra", { :controller => "air", :action => "scales" })
-  # get ("/zodiacs/aquarius", { :controller => "air", :action => "waterbearer" })
+  get("/zodiacs/gemini", { :controller => "air", :action => "twins" })
+  get("/zodiacs/libra", { :controller => "air", :action => "scales" })
+  get("/zodiacs/aquarius", { :controller => "air", :action => "waterbearer" })
   
-  # get("/zodiacs/cancer " { :controller => "earth" :action => "crab" })
-  # get("/zodiac/ scorpio", { :controller => "Water", :action => "scorpion" })
-  # get("/zodiacs/pisces", { :controller => "water", :action => "fish " })
+  get("/zodiacs/cancer", { :controller => "waterrrr" , :action => "crab" })
+  get("/zodiacs/scorpio", { :controller => "waterrrr", :action => "scorpion" })
+  get("/zodiacs/pisces", { :controller => "waterrrr", :action => "fish" })
 
   # PART 3: MORE R→C→A→V PRACTICE
   # ==========================
@@ -46,22 +46,32 @@ Rails.application.routes.draw do
   #  - Add some static HTML to mock up the response that you want to send back.
   #  - Write the Ruby to make it dynamic, and work properly.
 
-  # /roll/1/6
-  # /roll/2/6
-  # /roll/3/6
-  # /roll/4/6
-  # /roll/5/6
-  # /roll/6/6
+  counter = 0
+  6.times do
+  counter = counter + 1
+  get("/roll/"+counter+"6", { :controller => "dice", :action => "roll_1_6" })
 
-  # /roll/1/4
-  # /roll/2/4
-  # /roll/3/4
-  # /roll/4/4
-  # /roll/1/8
-  # /roll/2/8
-  # /roll/1/10
-  # /roll/2/10
-  # /roll/1/20
-  # /roll/2/20
+  end
+
+  #get("/roll/1/6", { :controller => "dice", :action => "roll_1_6" })
+  #get("/roll/2/6", { :controller => "dice", :action => "roll_2_6" })
+  #get("/roll/3/6", { :controller => "dice", :action => "roll_3_6" })
+  #get("/roll/4/6", { :controller => "dice", :action => "roll_4_6" })
+  #get("/roll/5/6", { :controller => "dice", :action => "roll_5_6" })
+  #get("/roll/6/6", { :controller => "dice", :action => "roll_6_6" })
+
+
+  #get("/roll/1/4", { :controller => "dice", :action => "roll_1_4" })
+  #get("/roll/2/4", { :controller => "dice", :action => "roll_2_4" })
+  #get("/roll/3/4", { :controller => "dice", :action => "roll_3_4" })
+  #get("/roll/4/4", { :controller => "dice", :action => "roll_4_4" })
+  #get("/roll/1/8", { :controller => "dice", :action => "roll_1_8" })
+  #get("/roll/2/8", { :controller => "dice", :action => "roll_2_8" })
+  #get("/roll/1/10", { :controller => "dice", :action => "roll_1_10" })
+  #get("/roll/2/10", { :controller => "dice", :action => "roll_2_10" })
+  #get("/roll/1/20", { :controller => "dice", :action => "roll_1_20" })
+  #get("/roll/2/20", { :controller => "dice", :action => "roll_2_20" })
+
+
 
 end
